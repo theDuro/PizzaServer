@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>it pizzas</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/header.css">
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+		$.get('http://127.0.0.1:8080/api/pizzas', {}, function (data, textStatus, jqXHR) {
+
+		    console.log('data: ', data);
+    		var html = '';
+        	$.each(data, function(key, value) {
+
+        	    html += '<div class="card">';
+  				html += '<img src="' + (isImage(value.image) ? value.image : getPlaceholder()) + '" alt="pizza" style="width:100%">';
+  				html += '<h3>' + value.title + '</h3>';
+  				html += '<p class="title">Rok produkcji</p>';
+  				html += '<p>' + (value.year === undefined ? "????" : value.year) + '</p>';
+				html += '<p><button>ID: ' + value.movieId + '</button></p>';
+				html += '</div>';
+        	});
+
+        	$('#pizzas').html(html);
+		}).fail(function() {
+		    $('#pizzas').html("<div style='text-align: center; color: red;'>Mam problem z wyświetleniem danych... :/ (musisz uruchomić aplikacje za pomocą MAVEN)</div>");
+		});
+
+		function isImage(url) {
+            return url.indexOf(".jpg") !== -1 || url.indexOf(".png") !== -1;
+		}
+
+		function getPlaceholder() {
+		    return './img/placeholder.png';
+		}
+
+        $(document).ready(function() {
+            $('#add-pizza').click(function() {
+                window.location.href='add-pizza.html';
+            })
+        });
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="header-title">
+				<h1>Biblioteka filmów</h1>
+			</div><div class="header-button" id="add-pizza">DODAJ FILM</div>
+		</header>
+
+    	<div class="pizzas" id="pizzas"></div>
+	</body>
+</html>
