@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface PizzaService {
 //todo adding metchods
+
     List<PizzaDto> findAll();
     PizzaDataDto findOneByMovieId(Long movieId);
 }

@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pl.edu.pwsztar.domain.dto.PizzaDataDto;
 import pl.edu.pwsztar.domain.dto.PizzaDto;
 import pl.edu.pwsztar.domain.dto.PizzaOrderDto;
 import pl.edu.pwsztar.operator.TotalCostCalculate;
@@ -18,14 +17,14 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value="/api")
-public class MovieApiController {
+public class PizzaApiController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MovieApiController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PizzaApiController.class);
 
     private final PizzaService pizzaService;
 
     @Autowired
-    public MovieApiController(PizzaService pizzaService) {
+    public PizzaApiController(PizzaService pizzaService) {
         this.pizzaService = pizzaService;
     }
 
@@ -37,11 +36,12 @@ public class MovieApiController {
         List<PizzaDto> moviesDto = pizzaService.findAll();
         return new ResponseEntity<>(moviesDto, HttpStatus.OK);
     }
-    @GetMapping(value = "/pizzas", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<PizzaOrderDto> getOrder(@RequestBody List<Integer> pizasIdList) {
-        TotalCostCalculate totalCostCalculate= new TotalCostCalculate();
+    @PostMapping(value = "/movies")
+    public ResponseEntity<?> createMovie(@RequestBody List<Integer> pizzaList) {
 
-        return new ResponseEntity<>(totalCostCalculate.pizzaCalculate(totalCostCalculate.getSqlTable(pizasIdList)), HttpStatus.OK);
+
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 

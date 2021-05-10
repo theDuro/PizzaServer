@@ -1,11 +1,13 @@
 package pl.edu.pwsztar.domain.entity;
 
+import pl.edu.pwsztar.domain.dto.PizzaDataDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "pizzas")
-public class Pizza implements Serializable {
+public class Pizza extends PizzaDataDto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

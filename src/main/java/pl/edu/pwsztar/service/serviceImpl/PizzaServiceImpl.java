@@ -36,7 +36,7 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     @Override
-    public PizzaDataDto findOneByMovieId(Long movieId) {
+    public Pizza findOneByMovieId(Long movieId) {
         return pizzaRepository.findOneByMovieId(movieId);
     }
 }
