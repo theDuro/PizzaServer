@@ -6,25 +6,47 @@ import java.util.List;
 
 public class PizzaOrderDto implements Serializable {
     private int totalCost;
-    private List<PizzaDataDto> piizasList = new LinkedList<>();
-    public PizzaOrderDto(int toltalCost,List<PizzaDataDto> piizasList) {
-        this.piizasList=piizasList;
-        this.totalCost=toltalCost;
+    private List<PizzaDataDto> pizzasList = new LinkedList<>();
+
+    /**
+     *
+     * @param totalCost
+     * @param pizzasList
+     */
+    public PizzaOrderDto(int totalCost, List<PizzaDataDto> pizzasList) {
+        this.pizzasList = pizzasList;
+        this.totalCost = totalCost;
     }
 
+    /**
+     *
+     * @return total cost of order
+     */
     public int getTotalCost() {
         return totalCost;
     }
 
+    /**
+     *
+     * @param totalCost
+     */
     public void setTotalCost(int totalCost) {
         this.totalCost = totalCost;
     }
 
-    public List<PizzaDataDto> getPiizasList() {
-        return piizasList;
+    /**
+     *
+     * @return list of products
+     */
+    public List<PizzaDataDto> getPizzasList() {
+        return pizzasList;
     }
 
-    public void setPiizasList(List<PizzaDataDto> piizasList) {
-        this.piizasList = piizasList;
+    /**
+     *
+     * @param pizzasList
+     */
+    public void setPizzasList(List<PizzaDataDto> pizzasList) {
+        this.pizzasList = pizzasList;
     }
 }

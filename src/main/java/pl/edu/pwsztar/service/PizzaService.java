@@ -5,9 +5,18 @@ import pl.edu.pwsztar.domain.dto.PizzaDto;
 
 import java.util.List;
 
-public interface PizzaService {
-//todo adding metchods
 
+public interface PizzaService {
+    /**
+     *
+     * @return list of products
+     */
     List<PizzaDto> findAll();
-    PizzaDataDto findOneByMovieId(Long movieId);
+
+    /**
+     *
+     * @param pizzaId
+     * @return product id from repository
+     */
+    PizzaDataDto findOneByPizzaId(Long pizzaId);
 }
