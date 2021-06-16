@@ -11,10 +11,18 @@ import pl.edu.pwsztar.domain.entity.Pizza;
 
 @Repository
 public interface PizzaRepository extends JpaRepository<Pizza, Long>, CrudRepository<Pizza, Long> {
-
+    /**
+     *
+     * @param pizzaId
+     */
     @Modifying
     @Query("select p.title,p.cost FROM Pizza p WHERE p.pizzaId= :pizzaId")
-    void getTableById(@Param("movieId") Long movieId);
+    void getTableById(@Param("pizzaId") Long pizzaId);
 
-    Pizza findOneByMovieId(Long movieId);
+    /**
+     *
+     * @param pizzaId
+     * @return product id from repository
+     */
+    Pizza findOneByPizzaId(Long pizzaId);
 }

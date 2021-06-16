@@ -6,17 +6,21 @@ CREATE TABLE pizzas (
 	cost INT(300)
 );
 
-INSERT INTO pizzas VALUES (1, 'pizza hawajska',18);
-INSERT INTO pizzas VALUES (2, 'pizza 4 sery', 16);
-INSERT INTO pizzas VALUES (3, 'pizza ostra azja', 15);
-INSERT INTO pizzas VALUES (4, 'pizza grzybowa', 13);
-INSERT INTO pizzas VALUES (5, 'pizza deserowa', 18);
-INSERT INTO pizzas VALUES (6, 'pizza słowianski kcoioł',17);
-INSERT INTO pizzas VALUES (7, 'pizza tron', 18);
-INSERT INTO pizzas VALUES (8, 'pizza weganska ', 14);
-INSERT INTO pizzas VALUES (9, 'pizza eko',20);
-INSERT INTO pizzas VALUES (10, 'cola',4);
-INSERT INTO pizzas VALUES (11, 'sok jabłkowy',5);
-INSERT INTO pizzas VALUES (12, 'sok z kaktusa',7);
-INSERT INTO pizzas VALUES (13, 'sko z malin',5);
-INSERT INTO pizzas VALUES (14, 'frytki',5);
+INSERT INTO pizzas VALUES (1, 'Pizza Salami', 25);
+INSERT INTO pizzas VALUES (2, 'Pizza 4 sery', 25);
+INSERT INTO pizzas VALUES (3, 'Pizza Bianca', 23);
+INSERT INTO pizzas VALUES (4, 'Pizza Sycylijska', 25);
+INSERT INTO pizzas VALUES (5, 'Pizza Calzone', 22);
+INSERT INTO pizzas VALUES (6, 'Pizza Margherita', 21);
+INSERT INTO pizzas VALUES (7, 'Pizza Tradycyjna', 22);
+INSERT INTO pizzas VALUES (8, 'Pizza Pieczarkowa', 22);
+INSERT INTO pizzas VALUES (9, 'Pizza Wegetariańska', 25);
+INSERT INTO pizzas VALUES (10, 'Pizza Bekonowa', 23);
+INSERT INTO pizzas VALUES (11, 'Pizza Wiejska', 23);
+INSERT INTO pizzas VALUES (12, 'Pizza Hawajska', 30);
+INSERT INTO pizzas VALUES (13, 'Pizza Meksykańska', 25);
+INSERT INTO pizzas VALUES (14, 'Pizza Grecka', 26);
+INSERT INTO pizzas VALUES (15, 'Coca Cola', 5);
+INSERT INTO pizzas VALUES (16, 'Pepsi', 5);
+INSERT INTO pizzas VALUES (17, 'Fanta', 5);
+INSERT INTO pizzas VALUES (18, 'Mirinda', 5);

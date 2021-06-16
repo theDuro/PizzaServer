@@ -5,6 +5,7 @@ import pl.edu.pwsztar.domain.dto.PizzaDataDto;
 import javax.persistence.*;
 import java.io.Serializable;
 
+
 @Entity
 @Table(name = "pizzas")
 public class Pizza extends PizzaDataDto implements Serializable {
@@ -23,26 +24,50 @@ public class Pizza extends PizzaDataDto implements Serializable {
     public Pizza() {
     }
 
-    public Long getMovieId() {
+    /**
+     *
+     * @return product id from sql file
+     */
+    public Long getPizzaId() {
         return pizzaId;
     }
 
+    /**
+     *
+     * @param pizzaId
+     */
     public void setPizzaId(Long pizzaId) {
-        this.pizzaId= pizzaId;
+        this.pizzaId = pizzaId;
     }
 
+    /**
+     *
+     * @return product title from sql file
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     *
+     * @return product cost from sql file
+     */
     public int getCost() {
         return cost;
     }
 
+    /**
+     *
+     * @param cost
+     */
     public void setCost(int cost) {
         this.cost = cost;
     }
